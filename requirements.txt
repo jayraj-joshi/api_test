@@ -28,3 +28,4 @@ langchain-community
 langchain-google-genai
 langchain-chroma
 chromadb
+python-multipart
