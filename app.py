@@ -133,6 +133,7 @@ def generate_questions(
         "3. **Output Format:**\n"
         "   - Provide the output in JSON format.\n"
         "   - Each question and its options should be distinct properties within the JSON structure.\n\n"
+        "4. **Make extremely difficult questions:**\n"
         "Input Context:\n"
         "{context}"
     )
