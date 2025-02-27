@@ -128,6 +128,7 @@ def generate_questions(
         f"   - Create {numberOfQuestions} {typeOfQuestions} questions.\n"
         "   - Each question must have 4 options (A, B, C, D) if MCQ.\n"
         "   - Ensure the correct answers are present in the provided context.\n\n"
+        "Do not make questions like \"In the given text,According to given paragraph\"etc ,give trivia.\n\n"
         "2. **Relevance Check:**\n"
         f"   - If the chapter name '{chapterName}' or topic '{topicName}' is not explicitly mentioned in the context, respond with 'Out of syllabus'.\n\n"
         "3. **Output Format:**\n"
