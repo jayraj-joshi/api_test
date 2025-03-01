@@ -85,13 +85,20 @@ def process_doubt(text=None, image=None):
     context = retrieved_docs[0].page_content
     page_number = retrieved_docs[0].metadata.get("page", "Unknown")
     
-    system_prompt = f"""
-    You are an AI assistant specializing in answering doubts with clear and precise explanations.
-    Given the following context, answer the user's question accurately:
-    
-    Context:
-    {context}
-    """
+    system_prompt = system_prompt = f"""
+You are an AI assistant specializing in providing clear and precise explanations.  
+Using the given context, answer the user's question accurately.  
+
+Ensure the response includes the page number mentioned on page from which the information is taken.  
+
+Format the output in JSON with markdown as follows:  
+```json
+{{
+    "pageNumber": "{page_number}",
+    "response": "Your answer here"
+}}
+```
+"""
     
     model = genai.GenerativeModel("gemini-1.5-flash")
     response = model.generate_content([system_prompt, f"User Query: {text}"])
