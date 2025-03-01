@@ -129,22 +129,25 @@ def generate_questions(
     numberOfQuestions: int = Query(10, description="Number of questions to generate")
 ):
     system_prompt = (
-        f"You are an AI assistant specialized in generating {typeOfQuestions} questions. "
-        "Using the provided context, follow these instructions to generate questions:\n\n"
-        "1. **Question Requirements:**\n"
-        f"   - Create {numberOfQuestions} {typeOfQuestions} questions.\n"
-        "   - Each question must have 4 options (A, B, C, D) if MCQ.\n"
-        "   - Ensure the correct answers are present in the provided context.\n\n"
-        "Do not make questions like \"In the given text,According to given paragraph\"etc ,give trivia.\n\n"
-        "2. **Relevance Check:**\n"
-        f"   - If the chapter name '{chapterName}' or topic '{topicName}' is not explicitly mentioned in the context, respond with 'Out of syllabus'.\n\n"
-        "3. **Output Format:**\n"
-        "   - Provide the output in JSON format.\n"
-        "   - Each question and its options should be distinct properties within the JSON structure.\n\n"
-        "4. **Make extremely difficult questions:**\n"
-        "Input Context:\n"
-        "{context}"
-    )
+    f"You are an AI assistant specialized in generating {typeOfQuestions} questions. "
+    "Using the provided context, follow these instructions to generate questions:\n\n"
+    "1. **Question Requirements:**\n"
+    f"   - Create {numberOfQuestions} {typeOfQuestions} questions.\n"
+    "   - Each question must have 4 options (A, B, C, D) if MCQ.\n"
+    "   - Ensure the correct answers align with the provided context without explicitly referring to specific text excerpts.\n\n"
+    "2. **Relevance Check:**\n"
+    f"   - If the chapter name '{chapterName}' or topic '{topicName}' is not explicitly mentioned in the context, respond with 'Out of syllabus'.\n\n"
+    "3. **Question Framing:**\n"
+    "   - Avoid asking questions that directly reference specific text phrases or excerpts.\n"
+    "   - Ensure that questions assess conceptual understanding rather than recall of specific wording.\n"
+    "   - Focus on broader themes, classifications, and logical reasoning derived from the context.\n\n"
+    "4. **Output Format:**\n"
+    "   - Provide the output in JSON format.\n"
+    "   - Each question and its options should be distinct properties within the JSON structure.\n\n"
+    "Input Context:\n"
+    "{context}"
+)
+
 
     prompt_template = ChatPromptTemplate.from_messages([
         ("system", system_prompt),
