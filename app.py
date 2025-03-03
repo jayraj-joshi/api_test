@@ -98,6 +98,8 @@ Format the output in JSON with markdown as follows:
     "response": "Your answer here"
 }}
 ```
+"Input Context:\n"
+    "{context}"
 """
     
     model = genai.GenerativeModel("gemini-1.5-flash")
