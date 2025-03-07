@@ -29,3 +29,6 @@ langchain-google-genai
 langchain-chroma
 chromadb
 python-multipart
+asyncpg
+sqlalchemy
+psycopg2-binary
