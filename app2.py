@@ -38,7 +38,7 @@ app = FastAPI()
 # CORS configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://atomprep.vercel.app","https://atomrank.in","https://lovable.dev"], 
+    allow_origins=["https://atomprep.vercel.app","https://atomrank.in","https://preview--quizchaos.lovable.app/"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
