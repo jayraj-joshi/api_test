@@ -38,7 +38,7 @@ app = FastAPI()
 # CORS configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://atomprep.vercel.app","https://atomrank.in","https://preview--quizchaos.lovable.app/"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -63,7 +63,7 @@ vectorstore = Chroma.from_documents(
 retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 10})
 
 llm = ChatGoogleGenerativeAI(
-    model="gemini-1.5-flash",
+    model="gemini-2.0-flash-lite",
     temperature=1.0,
     max_tokens=None,
     timeout=None
