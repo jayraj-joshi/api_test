@@ -281,11 +281,12 @@ def process_doubt(text=None, image=None):
     system_prompt = f"""
     You are an AI assistant specializing in answering doubts with clear and precise explanations.
     Given the following context, answer the user's question accurately:
-    Give page number mention on the page from which response os taken
+    Give page number mention on the page from which response is taken
+    If the context contains the answer, include the page number from which the information is taken. If the answer is not found in the context, generate a response based on your knowledge.  
     Give output in JSON format with markdown as below:
     ```json
     {{
-    "pageNumber": "{page_number}",
+    "pageNumber": "{page_number if found else 'N/A'}",
     "response": "Your answer here"
     }}```
     Context:
