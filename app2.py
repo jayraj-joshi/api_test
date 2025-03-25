@@ -286,7 +286,7 @@ def process_doubt(text=None, image=None):
     Give output in JSON format with markdown as below:
     ```json
     {{
-    "pageNumber": "{page_number if found else 'N/A'}",
+    "pageNumber": "{page_number}",
     "response": "Your answer here"
     }}```
     Context:
