@@ -166,7 +166,7 @@ async def generate_questions(
     logger.debug(f"Generating batch: batch_size={batch_size}, random_seed={random_seed}, random_number={random_number}")
     logger.debug(f"Existing questions passed to LLM: {existing_questions_str}")
 
-system_prompt = (
+    system_prompt = (
     "You are an AI assistant specialized in generating {typeOfQuestions} questions. "
     "Using the provided context, follow these instructions to generate questions:\n\n"
     "1. **Question Requirements:**\n"
