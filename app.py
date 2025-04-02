@@ -182,7 +182,7 @@ async def generate_questions(
     "   - Provide the output in JSON format wrapped in ```json and ```.\n"
     "   - Structure the JSON as a dictionary with a 'questions' key containing a list of question objects.\n"
     "   - Each question object must follow this exact structure:\n"
-     "   -In case question type is "True False" add only two options "True"and "False" in json"
+    "  -In case question type is "True False" add only two options "True"and "False" in json\n"
     "     ```json\n"
     "     {{\n"
     "       \"question\": \"<question text>\",\n"
