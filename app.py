@@ -166,7 +166,7 @@ async def generate_questions(
     logger.debug(f"Generating batch: batch_size={batch_size}, random_seed={random_seed}, random_number={random_number}")
     logger.debug(f"Existing questions passed to LLM: {existing_questions_str}")
 
-    system_prompt = (
+system_prompt = (
     "You are an AI assistant specialized in generating {typeOfQuestions} questions. "
     "Using the provided context, follow these instructions to generate questions:\n\n"
     "1. **Question Requirements:**\n"
@@ -182,7 +182,7 @@ async def generate_questions(
     "   - Provide the output in JSON format wrapped in ```json and ```.\n"
     "   - Structure the JSON as a dictionary with a 'questions' key containing a list of question objects.\n"
     "   - Each question object must follow this exact structure:\n"
-    "  -In case question type is "True False" add only two options "True"and "False" in json\n"
+    "   - In case question type is 'True False', include only two options 'True' and 'False' in the JSON.\n"
     "     ```json\n"
     "     {{\n"
     "       \"question\": \"<question text>\",\n"
